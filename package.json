@@ -1,0 +1,15 @@
+{
+  "name": "koa2-sample",
+  "version": "1.0.0",
+  "description": "koa2-sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa2",
+    "sample"
+  ],
+  "author": "robin",
+  "license": "MIT"
+}
