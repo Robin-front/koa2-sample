@@ -1,7 +1,7 @@
 const Koa = require('koa')
 const app = new Koa();
-
-
+const logger = require('./config/logger')
+// console.log('logger', logger);
 app.use(async (ctx, next) => {
   console.time(`${ctx.method} ${ctx.url}`);
   await next();
