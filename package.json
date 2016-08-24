@@ -10,7 +10,8 @@
     "start": {
       "command": "node index.js",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "DEBUG": "*"
       }
     },
     "test": {
@@ -27,6 +28,8 @@
   "author": "robin",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-register": "^6.11.6",
     "koa": "^2.0.0-alpha.5"
   },
   "devDependencies": {
