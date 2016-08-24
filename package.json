@@ -11,5 +11,8 @@
     "sample"
   ],
   "author": "robin",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.0.0-alpha.5"
+  }
 }
