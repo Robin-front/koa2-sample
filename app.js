@@ -9,14 +9,20 @@ const onerror = require('koa-onerror')
 onerror(app);
 
 app.use(async (ctx, next) => {
-  throw new Error('123')
   console.time(`${ctx.method} ${ctx.url}`);
   await next();
   console.timeEnd(`${ctx.method} ${ctx.url}`);
 });
-// response
-app.use(ctx => {
-  ctx.body = 'Hello Koa';
+
+// 路由
+const router = require('koa-router')();
+
+router.get('/', function (ctx, next) {
+  ctx.body = 'hello koa2';
 });
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 app.listen(3000);
