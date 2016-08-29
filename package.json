@@ -8,7 +8,7 @@
   },
   "betterScripts": {
     "start": {
-      "command": "node index.js",
+      "command": "nodemon index.js",
       "env": {
         "NODE_ENV": "development",
         "DEBUG": "*"
@@ -30,7 +30,11 @@
   "dependencies": {
     "babel-plugin-transform-async-to-generator": "^6.8.0",
     "babel-register": "^6.11.6",
-    "koa": "^2.0.0-alpha.5"
+    "koa": "^2.0.0-alpha.5",
+    "koa-onerror": "^2.0.0",
+    "koa-router": "^7.0.1",
+    "mini-logger": "^1.1.1",
+    "nodemon": "^1.10.2"
   },
   "devDependencies": {
     "better-npm-run": "0.0.11"
