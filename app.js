@@ -1,6 +1,7 @@
 const Koa = require('koa')
 const app = new Koa();
 
+// require('./gb-schema.js')
 // 输出错误日志
 const logger = require('./config/logger')
 
