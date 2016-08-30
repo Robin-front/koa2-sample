@@ -11,8 +11,8 @@ const onerror = require('koa-onerror')
 onerror(app);
 
 app.use(views(__dirname + '/views', {
-  extension: 'hbs',
-  map: { hbs: 'handlebars' }
+  extension: 'nunjucks',
+  map: { nunjucks: 'nunjucks' }
 }))
 
 app.use(async (ctx, next) => {
@@ -23,6 +23,7 @@ app.use(async (ctx, next) => {
 
 router.get('/', async function (ctx, next) {
   await ctx.render('index', {
+    title: 'robin',
     msg: 'robin, koko'
   })
 });
