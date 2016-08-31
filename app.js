@@ -1,5 +1,6 @@
 const Koa = require('koa')
 const app = new Koa();
+var bodyParser = require('koa-bodyparser');
 import router from './routers'
 var views = require('koa-views');
 
@@ -10,6 +11,7 @@ const logger = require('./config/logger')
 const onerror = require('koa-onerror')
 onerror(app);
 
+app.use(bodyParser());
 app.use(views(__dirname + '/views', {
   extension: 'nunjucks',
   map: { nunjucks: 'nunjucks' }
