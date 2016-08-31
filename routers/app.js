@@ -12,7 +12,7 @@ import {
 
 export default function (app, router) {
     //新增
-    router.post('/docs/article/save', save)
+    router.post('/article/save', save)
 
     router.get('/', index)
 
