@@ -1,8 +1,8 @@
 const Koa = require('koa')
 const app = new Koa();
-// 路由
-const router = require('koa-router')();
+import router from './routers'
 var views = require('koa-views');
+
 // 输出错误日志
 const logger = require('./config/logger')
 
@@ -20,16 +20,21 @@ app.use(async (ctx, next) => {
   await next();
   console.timeEnd(`${ctx.method} ${ctx.url}`);
 });
+//
+// // 路由
+// const router = require('koa-router')();
 
-router.get('/', async function (ctx, next) {
-  await ctx.render('index', {
-    title: 'robin',
-    msg: 'robin, koko'
-  })
-});
+/**
+ * 注入路由信息
+ */
+router(app);
 
-app
-  .use(router.routes())
-  .use(router.allowedMethods());
+// router.get('/', function (ctx, next) {
+//   ctx.body = 'hello koa2';
+// });
+//
+// app
+//   .use(router.routes())
+//   .use(router.allowedMethods());
 
 app.listen(3000);
